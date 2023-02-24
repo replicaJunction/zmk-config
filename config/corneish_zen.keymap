@@ -22,6 +22,10 @@
 
 #define QUICK_TAP_MS 175
 
+&num_word {  // num-word, requires PR #1441
+    layers = <L_SYMBOL>;
+};
+
 &lt {
         flavor = "balanced";
         tapping-term-ms = <200>;
@@ -82,7 +86,8 @@
                         label = "NUM_WORD_LAYER";
                         #binding-cells = <2>;
                         bindings = <&mo>, <&num_word>;
-                        tapping-term-ms = <280>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <QUICK_TAP_MS>;
                 };
         };
 
