@@ -58,6 +58,14 @@
                         hold-trigger-key-positions = <KEYS_LEFT_SIDE KEYS_THUMBS>;
                         hold-trigger-on-release;       // requires PR #1423
                 };
+
+                num_layer_word {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "NUM_LAYER_WORD";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <175>;
+                        bindings = <&num_word>, <&sl L_SYMBOL>;
+                };
         };
 
         keymap {
@@ -69,7 +77,7 @@
    &kp TAB   &kp Q       &kp W       &kp F        &kp P             &kp B                                &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
    &kp LCTRL &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T      &kp G                                &kp M               &hmr RCTRL N &hmr RSHFT E &hmr RALT I &hmr RGUI O &kp SEMI
    &kp LSHFT &kp Z       &kp X       &kp C        &kp D             &kp V                                &kp K               &kp H        &kp COMMA    &kp DOT     &kp FSLH    &kp ESC
-                                                  &lt L_SYMBOL BSPC &sk LSHFT &kp LSHFT   &kp ENTER &lt L_EXTEND SPACE  &num_word
+                                                  &lt L_SYMBOL BSPC &sk LSHFT &kp LSHFT   &kp ENTER &lt L_EXTEND SPACE  &num_layer_word L_SYMBOL 0
                         >;
                 };
 
