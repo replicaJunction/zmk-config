@@ -20,14 +20,6 @@
 #define KEYS_RIGHT_SIDE 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
 #define KEYS_THUMBS 36 37 38 39 40 41
 
-&caps_word {  // mods deactivate caps-word, requires PR #1451
-    /delete-property/ ignore-modifiers;
-};
-
-&num_word {  // num-word, requires PR #1451
-        layers = <L_SYMBOL>;
-};
-
 / {
   chosen {
     zmk,matrix_transform = &default_transform;
@@ -62,6 +54,15 @@
                         bindings = <&kp>, <&kp>;
                         hold-trigger-key-positions = <KEYS_LEFT_SIDE KEYS_THUMBS>;
                         hold-trigger-on-release;       // requires PR #1423
+                };
+
+                num_word: behavior_num_word {
+                        compatible = "zmk,behavior-caps-word";
+                        label = "NUM_WORD";
+                        #binding-cells = <0>;
+                        layers = <L_SYMBOL>;
+                        continue-list = <BACKSPACE DELETE DOT COMMA>;
+                        ignore-numbers;
                 };
         };
 
