@@ -29,7 +29,8 @@
                         #binding-cells = <2>;
                         tapping-term-ms = <280>;
                         quick-tap-ms = <175>;
-                        global-quick-tap-ms = <150>;   // requires PR #1387
+                        //global-quick-tap-ms = <150>;   // requires PR #1387
+                        global-quick-tap;
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
                         hold-trigger-key-positiosn = <KEYS_RIGHT_SIDE KEYS_THUMBS>;
@@ -42,7 +43,8 @@
                         #binding-cells = <2>;
                         tapping-term-ms = <280>;
                         quick-tap-ms = <175>;
-                        global-quick-tap-ms = <150>;   // requires PR #1387
+                        //global-quick-tap-ms = <150>;   // requires PR #1387
+                        global-quick-tap;
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
                         hold-trigger-key-positiosn = <KEYS_LEFT_SIDE KEYS_THUMBS>;
