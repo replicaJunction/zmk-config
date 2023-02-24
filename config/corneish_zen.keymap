@@ -79,6 +79,7 @@
 
                 num_word_layer: behavior_num_word_layer {
                         compatible = "zmk,behavior-hold-tap";
+                        label = "NUM_WORD_LAYER";
                         #binding-cells = <2>;
                         bindings = <&mo>, <&num_word>;
                         tapping-term-ms = <280>;
