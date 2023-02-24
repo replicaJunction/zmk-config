@@ -4,10 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: replicaJunction
+      url-base: https://github.com/replicaJunction
   projects:
     - name: zmk
-      remote: caksoylar
-      revision: caksoylar/zen-v2
+      remote: replicaJunction
+      revision: main
       import: app/west.yml
   self:
     path: config
