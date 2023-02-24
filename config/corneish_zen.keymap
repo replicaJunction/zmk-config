@@ -39,7 +39,7 @@
                         global-quick-tap;
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
-                        hold-trigger-key-positiosn = <KEYS_RIGHT_SIDE KEYS_THUMBS>;
+                        hold-trigger-key-positions = <KEYS_RIGHT_SIDE KEYS_THUMBS>;
                         hold-trigger-on-release;       // requires PR #1423
                 };
 
@@ -53,7 +53,7 @@
                         global-quick-tap;
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
-                        hold-trigger-key-positiosn = <KEYS_LEFT_SIDE KEYS_THUMBS>;
+                        hold-trigger-key-positions = <KEYS_LEFT_SIDE KEYS_THUMBS>;
                         hold-trigger-on-release;       // requires PR #1423
                 };
         };
