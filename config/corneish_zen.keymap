@@ -34,10 +34,10 @@
                 extend_layer { // 1
                         label = "EXTEND";
                         bindings = <
-    &trans    &kp ESC   &kp K_BACK &kp LC(F) &kp K_FORWARD &kp INS                     &kp PG_UP &kp HOME  &kp UP    &kp END   &trans    &trans   
-    &trans    &sk LGUI  &sk LALT   &sk LSHFT &sk LCTRL     &trans                      &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT &kp DEL   &trans   
-    &trans    &kp LC(Z) &kp LC(X)  &kp LC(C) &trans        &kp LC(V)                   &trans    &kp BSPC  &kp TAB   &kp K_APP &trans    &trans   
-                                            &trans         &trans    &trans    &trans  &kp ENTER &trans
+    &trans    &kp ESC   &kp K_BACK &kp LC(F) &kp K_FORWARD &kp INS                       &kp PG_UP &kp HOME  &kp UP    &kp END   &trans    &trans
+    &trans    &sk LGUI  &sk LALT   &sk LSHFT &sk LCTRL     &trans                        &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT &kp DEL   &trans
+    &trans    &kp LC(Z) &kp LC(X)  &kp LC(C) &trans        &kp LC(V)                     &trans    &kp BSPC  &kp TAB   &kp K_APP &trans    &trans
+                                            &trans         &trans    &trans    &kp ENTER &trans &trans
                         >;
                 };
 
