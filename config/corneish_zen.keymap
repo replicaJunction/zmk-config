@@ -116,6 +116,24 @@
                         tap-ms = <30>;
                         bindings = <&kp T &kp H &kp E>;
                 };
+
+                macro_word_true: macro_word_true {
+                        label = "MACRO_WORD_TRUE";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        wait-ms = <30>;
+                        tap-ms = <30>;
+                        bindings = <&kp T &kp R &kp U &kp E>;
+                };
+
+                macro_word_false: macro_word_false {
+                        label = "MACRO_WORD_FALSE";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        wait-ms = <30>;
+                        tap-ms = <30>;
+                        bindings = <&kp F &kp A &kp L &kp S &kp E>;
+                };
         };
 
         combos {
@@ -128,12 +146,26 @@
 						timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
-				combo_the {
+				combo_word_the {
 						bindings = <&macro_word_the>;
 						key-positions = <RM1 RM2>;
 						layers = <L_DEFAULT>;
 						timeout-ms = <MACRO_TIMEOUT_MS>;
 				};
+
+                combo_word_true {
+                        bindings = <&macro_word_true>;
+						key-positions = <RT1 RT2>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                combo_word_false {
+                        bindings = <&macro_word_false>;
+						key-positions = <RT2 RT3>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
 
 				combo_undo {
 						bindings = <&kp LC(Z)>;
