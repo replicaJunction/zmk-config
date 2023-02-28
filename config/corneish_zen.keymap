@@ -271,7 +271,6 @@
                                          &trans    &trans   &trans   &trans   &trans   &trans
                         >;
                 };
-        };
 
                 control_layer {
                         label = "CONTROL";
@@ -293,5 +292,4 @@
 //                                         &trans   &trans   &trans   &trans   &trans   &trans
 //                         >;
 //                 };
-//         };
 };
