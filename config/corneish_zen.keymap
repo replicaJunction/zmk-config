@@ -112,8 +112,8 @@
                         label = "MACRO_WORD_THE";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        wait-ms = <40>;
-                        tap-ms = <40>;
+                        wait-ms = <30>;
+                        tap-ms = <30>;
                         bindings = <&kp T &kp H &kp E>;
                 };
         };
