@@ -123,6 +123,48 @@
 						layers = <L_DEFAULT>;
 						timeout-ms = <MACRO_TIMEOUT_MS>;
 				};
+
+				combo_undo {
+						bindings = <&kp LC(Z)>;
+						key-positions = <LB4 LB3>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+				};
+
+				combo_cut {
+						bindings = <&kp LC(X)>;
+						key-positions = <LB4 LB2>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+				};
+
+				combo_copy {
+						bindings = <&kp LC(C)>;
+						key-positions = <LB3 LB2>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+				};
+
+				combo_paste {
+						bindings = <&kp LC(V)>;
+						key-positions = <LB2 LB1>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+				};
+
+				combo_select_all {
+						bindings = <&kp LC(A)>;
+						key-positions = <LB4 LB1>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+				};
+
+				combo_find {
+						bindings = <&kp LC(V)>;
+						key-positions = <LB1 LB0>;
+						layers = <L_DEFAULT>;
+						timeout-ms = <MACRO_TIMEOUT_MS>;
+				};
         };
 
         conditional_layers {
