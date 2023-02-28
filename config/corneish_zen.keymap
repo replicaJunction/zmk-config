@@ -212,7 +212,7 @@
 				};
 
 				combo_find {
-						bindings = <&kp LC(V)>;
+						bindings = <&kp LC(F)>;
 						key-positions = <LB1 LB0>;
 						layers = <L_DEFAULT>;
 						timeout-ms = <MACRO_TIMEOUT_MS>;
