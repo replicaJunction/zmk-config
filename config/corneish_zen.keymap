@@ -158,7 +158,11 @@
                 ZMK_MACRO(word_false,
                         wait-ms = <30>;
                         tap-ms = <30>;
-                        bindings = <&kp F &kp A &kp L &kp S &kp E>;
+                        bindings
+                                = <&macro_press &kp LSHIFT>
+                                , <&macro_tap &kp F>
+                                , <&macro_release &kp LSHIFT>
+                                , <&macro_tap &kp A &kp L &kp S &kp E>;
                 )
         };
 
@@ -215,24 +219,16 @@
 				};
         };
 
-        conditional_layers {
-                compatible = "zmk,conditional-layers";
-                tri_layer {
-                        if-layers = <L_EXTEND L_SYMBOL>;
-                        then-layer = <L_FUNCTION>;
-                };
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         label = "DEFAULT";
                         bindings = <
-   &kp TAB   &kp Q       &kp W       &kp F        &kp P             &kp B                                &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
-   &kp LCTRL &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T      &kp G                                &kp M               &hmr RCTRL N &hmr RSHFT E &hmr RALT I &hmr RGUI O &kp SEMI
-   &kp LSHFT &kp Z       &kp X       &kp C        &kp D             &kp V                                &kp K               &kp H        &kp COMMA    &kp DOT     &kp FSLH    &kp ESC
-                                                  &lt L_SYMBOL BSPC &sk LSHFT &lt L_WORDS ESC     &kp ENTER &lt L_EXTEND SPACE  &num_word_layer L_SYMBOL 0
+   &kp TAB        &kp Q       &kp W       &kp F        &kp P             &kp B                         &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
+   &sl L_FUNCTION &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T      &kp G                         &kp M               &hmr RCTRL N &hmr RSHFT E &hmr RALT I &hmr RGUI O &kp SEMI
+   &kp LSHFT      &kp Z       &kp X       &kp C        &kp D             &kp V                         &kp K               &kp H        &kp COMMA    &kp DOT     &kp FSLH    &kp ESC
+                                                       &lt L_WORDS BSPC  &sk LSHFT &kp ESC   &kp ENTER &lt L_EXTEND SPACE  &num_word_layer L_SYMBOL 0
                         >;
                 };
 
@@ -242,7 +238,7 @@
     &trans    &kp ESC   &kp K_BACK &kp LC(F) &kp K_FORWARD &kp INS                       &kp PG_UP &kp HOME  &kp UP    &kp END   &trans    &trans
     &trans    &sk LGUI  &sk LALT   &sk LSHFT &sk LCTRL     &trans                        &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT &kp DEL   &trans
     &trans    &kp LC(Z) &kp LC(X)  &kp LC(C) &trans        &kp LC(V)                     &trans    &kp BSPC  &kp TAB   &kp K_APP &trans    &trans
-                                             &trans        &trans    &trans    &kp ENTER &trans &trans
+                                             &trans        &trans    &trans    &trans    &trans &trans
                         >;
                 };
 
@@ -252,7 +248,7 @@
     &kp TILDE &kp EXCL  &kp AT    &kp HASH &kp COLON &kp PRCNT                  &kp STAR  &kp N7   &kp N8   &kp N9   &kp PLUS  &trans
     &kp GRAVE &kp SEMI  &kp UNDER &kp LBKT &kp LPAR  &kp LBRC                   &kp EQUAL &kp N4   &kp N5   &kp N6   &kp MINUS &kp PIPE
     &trans    &kp CARET &kp DLLR  &kp RBKT &kp RPAR  &kp RBRC                   &kp N0    &kp N1   &kp N2   &kp N3   &kp FSLH  &kp BSLH
-                                          &trans    &trans   &trans   &trans   &trans    &trans
+                                          &trans    &trans   &trans   &trans    &trans    &trans
                         >;
                 };
 
