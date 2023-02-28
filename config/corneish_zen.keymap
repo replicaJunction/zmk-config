@@ -178,7 +178,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer { 
+                default_layer {
                         label = "DEFAULT";
                         bindings = <
    &kp TAB   &kp Q       &kp W       &kp F        &kp P             &kp B                                &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
@@ -188,7 +188,7 @@
                         >;
                 };
 
-                extend_layer { 
+                extend_layer {
                         label = "EXTEND";
                         bindings = <
     &trans    &kp ESC   &kp K_BACK &kp LC(F) &kp K_FORWARD &kp INS                       &kp PG_UP &kp HOME  &kp UP    &kp END   &trans    &trans
@@ -221,9 +221,9 @@
                 control_layer {
                         label = "CONTROL";
                         bindings = <
-    &bootloader &trans       &trans       &trans       &trans       &out OUT_USB                   &trans   &trans   &trans   &trans   &trans   &bootloader   
+    &bootloader &trans       &trans       &trans       &trans       &out OUT_USB                   &trans   &trans   &trans   &trans   &trans   &bootloader
     &reset      &trans       &trans       &trans       &trans       &out OUT_BLE                   &trans   &trans   &trans   &trans   &trans   &reset
-    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &trans   &trans   &trans   &trans   &trans   &trans   
+    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &trans   &trans   &trans   &trans   &trans   &trans
                                                        &trans       &trans       &trans   &trans   &trans   &trans
                         >;
                 };
@@ -232,9 +232,9 @@
 //                 template {
 //                         label = "EXTEND";
 //                         bindings = <
-//     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans   
-//     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans   
-//     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans   
+//     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans
+//     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans
+//     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans
 //                                         &trans   &trans   &trans   &trans   &trans   &trans
 //                         >;
 //                 };
