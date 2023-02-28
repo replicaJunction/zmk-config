@@ -107,6 +107,17 @@
                 };
         };
 
+        macros {
+                macro_word_the {
+                        label = "MACRO_WORD_THE";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        wait-ms = <40>;
+                        tap-ms = <40>;
+                        bindings = <&kp T &kp H &kp E>;
+                };
+        };
+
         combos {
                 compatible = "zmk,combos";
                 combo_esc {
@@ -118,7 +129,7 @@
                 };
 
 				combo_the {
-						bindings = <&macro_tap &kp T &kp H &kp E>;
+						bindings = &macro_word_the;
 						key-positions = <RM1 RM2>;
 						layers = <L_DEFAULT>;
 						timeout-ms = <MACRO_TIMEOUT_MS>;
