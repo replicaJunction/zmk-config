@@ -51,7 +51,7 @@
                         label = "HOMEROW_MODS_LEFT";
                         #binding-cells = <2>;
                         tapping-term-ms = <280>;
-                        quick-tap-ms = <175>;
+                        quick-tap-ms = <QUICK_TAP_MS>;
                         global-quick-tap-ms = <150>;   // requires PR #1387
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
@@ -64,7 +64,7 @@
                         label = "HOMEROW_MODS_RIGHT";
                         #binding-cells = <2>;
                         tapping-term-ms = <280>;
-                        quick-tap-ms = <175>;
+                        quick-tap-ms = <QUICK_TAP_MS>;
                         global-quick-tap-ms = <150>;   // requires PR #1387
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
@@ -72,16 +72,21 @@
                         hold-trigger-on-release;       // requires PR #1423
                 };
 
-                // num_word: behavior_num_word {
-                        // compatible = "zmk,behavior-caps-word";
-                        // label = "NUM_WORD";
-                        // #binding-cells = <0>;
-                        // layers = <L_SYMBOL>;                           // insert location of numbers layer here
-                        // continue-list = <BACKSPACE DELETE DOT COMMA>;  // adjust as desired
-                        // ignore-numbers;                                // numbers don't deactivate the layer
-                // };
 
                 num_word_layer: behavior_num_word_layer {
+                        // This creates a tap/hold behavior where tapping
+                        // activates numword and holding is a temporary layer
+                        // shift to numbers.
+                        //
+                        // Requires PR #1451.
+                        //
+                        // The first binding (param) to this behavior will be
+                        // the momentary layer, and the second binding is
+                        // ignored (but required by the underlying
+                        // hold-tap behavior).
+                        //
+                        // Make sure to initialize the num-word behavior
+                        // in the configuration.
                         compatible = "zmk,behavior-hold-tap";
                         label = "NUM_WORD_LAYER";
                         #binding-cells = <2>;
