@@ -108,7 +108,7 @@
         };
 
         macros {
-                macro_word_the {
+                macro_word_the: macro_word_the {
                         label = "MACRO_WORD_THE";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
