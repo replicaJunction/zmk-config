@@ -29,6 +29,8 @@
 
 
 #define QUICK_TAP_MS 175
+#define COMBO_WAIT_MS 30
+#define COMBO_TAP_MS 30
 
 // Normal timeout for macros
 #define MACRO_TIMEOUT_MS 50
@@ -109,6 +111,12 @@
         };
 
         macros {
+                ZMK_MACRO(digraph_ue,
+                        wait-ms = <COMBO_WAIT_MS>;
+                        tap-ms = <COMBO_TAP_MS>;
+                        bindings = <&kp U &kp E>;
+                )
+
                 ZMK_MACRO(word_and,
                         wait-ms = <30>;
                         tap-ms = <30>;
@@ -217,6 +225,17 @@
                         layers = <L_DEFAULT>;
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
+
+                // These combos are di/trigrams for English that are
+                // more difficult to type with Colemak-DH.
+                // The logic behind naming is
+                // "combo_lettersPressed_lettersSent"
+                combo_uy_ue {
+                        bindings = <&digraph_ue>;
+                        key-positions = <RT2 RT3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                }
         };
 
         keymap {
