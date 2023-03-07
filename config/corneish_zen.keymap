@@ -235,7 +235,7 @@
                         key-positions = <RT2 RT3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <MACRO_TIMEOUT_MS>;
-                }
+                };
         };
 
         keymap {
