@@ -247,7 +247,7 @@
 
                 combo_qw_qu {
                         bindings = <&digraph_qu>;
-                        key-positions = <RT4 RT3>;
+                        key-positions = <LT4 LT3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
