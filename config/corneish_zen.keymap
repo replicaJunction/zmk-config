@@ -111,6 +111,12 @@
         };
 
         macros {
+                ZMK_MACRO(digraph_qu,
+                        wait-ms = <COMBO_WAIT_MS>;
+                        tap-ms = <COMBO_TAP_MS>;
+                        bindings = <&kp Q &kp U>;
+                )
+
                 ZMK_MACRO(digraph_ue,
                         wait-ms = <COMBO_WAIT_MS>;
                         tap-ms = <COMBO_TAP_MS>;
@@ -176,10 +182,18 @@
 
         combos {
                 compatible = "zmk,combos";
+
                 combo_esc {
                         // Left hand, home row middle + index -> escape
                         bindings = <&kp ESC>;
                         key-positions = <LM1 LM2>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                combo_tab {
+                        bindings = <&kp TAB>;
+                        key-positions = <LM2 LM3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
@@ -230,6 +244,14 @@
                 // more difficult to type with Colemak-DH.
                 // The logic behind naming is
                 // "combo_lettersPressed_lettersSent"
+
+                combo_qw_qu {
+                        bindings = <&digraph_qu>;
+                        key-positions = <RT4 RT3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
                 combo_uy_ue {
                         bindings = <&digraph_ue>;
                         key-positions = <RT2 RT3>;
@@ -247,7 +269,7 @@
    &kp TAB        &kp Q       &kp W       &kp F        &kp P         &kp B                           &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
    &sl L_FUNCTION &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T  &kp G                           &kp M               &hmr RCTRL N &hmr RSHFT E &hmr RALT I &hmr RGUI O &kp SEMI
    &kp LSHFT      &kp Z       &kp X       &kp C        &kp D         &kp V                           &kp K               &kp H        &kp COMMA    &kp DOT     &kp FSLH    &tog L_CONTROL
-                                                       &kp BSPC      &sk LSHFT &kp ESC     &kp ENTER &lt L_EXTEND SPACE  &num_word_layer L_SYMBOL 0
+                                                       &kp BSPC      &sk LSHFT &key_repeat &kp ENTER &lt L_EXTEND SPACE  &num_word_layer L_SYMBOL 0
                         >;
                 };
 
