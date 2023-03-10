@@ -17,7 +17,8 @@
 #define L_SYMBOL    2
 #define L_FUNCTION  3
 // #define L_WORDS     4
-#define L_CONTROL   4
+#define L_MACRO     4
+#define L_CONTROL   5
 
 // #define KEYS_LEFT_SIDE 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29
 // #define KEYS_RIGHT_SIDE 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
@@ -29,8 +30,8 @@
 
 
 #define QUICK_TAP_MS 175
-#define COMBO_WAIT_MS 30
-#define COMBO_TAP_MS 30
+#define MACRO_WAIT_MS 30
+#define MACRO_TAP_MS 30
 
 // Normal timeout for macros
 #define MACRO_TIMEOUT_MS 50
@@ -112,73 +113,85 @@
 
         macros {
                 ZMK_MACRO(digraph_qu,
-                        wait-ms = <COMBO_WAIT_MS>;
-                        tap-ms = <COMBO_TAP_MS>;
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
                         bindings = <&kp Q &kp U>;
                 )
 
                 ZMK_MACRO(digraph_ue,
-                        wait-ms = <COMBO_WAIT_MS>;
-                        tap-ms = <COMBO_TAP_MS>;
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
                         bindings = <&kp U &kp E>;
                 )
 
-                ZMK_MACRO(word_and,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings = <&kp A &kp N &kp D>;
+                ZMK_MACRO(symbol_double_equal,
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
+                        bindings = <&kp EQUAL &kp EQUAL>;
                 )
 
-                ZMK_MACRO(word_the,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings = <&kp T &kp H &kp E>;
+                ZMK_MACRO(symbol_not_equal,
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
+                        bindings = <&kp LS(N1) &kp EQUAL &kp EQUAL>;
                 )
 
-                ZMK_MACRO(word_git,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings = <&kp G &kp I &kp T>;
-                )
-
-                ZMK_MACRO(word_poetry,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings = <&kp P &kp O &kp E &kp T &kp R &kp Y>;
-                )
-
-                ZMK_MACRO(word_class,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings = <&kp C &kp L &kp A &kp S &kp S>;
-                )
-
-                ZMK_MACRO(word_def,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings = <&kp D &kp E &kp F>;
-                )
-
-                ZMK_MACRO(word_true,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings
-                                = <&macro_press &kp LSHIFT>
-                                , <&macro_tap &kp T>
-                                , <&macro_release &kp LSHIFT>
-                                , <&macro_tap &kp R &kp U &kp E>;
-                )
-
-                ZMK_MACRO(word_false,
-                        wait-ms = <30>;
-                        tap-ms = <30>;
-                        bindings
-                                = <&macro_press &kp LSHIFT>
-                                , <&macro_tap &kp F>
-                                , <&macro_release &kp LSHIFT>
-                                , <&macro_tap &kp A &kp L &kp S &kp E>;
-                )
-        };
+//                 ZMK_MACRO(word_and,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings = <&kp A &kp N &kp D>;
+//                 )
+//
+//                 ZMK_MACRO(word_the,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings = <&kp T &kp H &kp E>;
+//                 )
+//
+//                 ZMK_MACRO(word_git,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings = <&kp G &kp I &kp T>;
+//                 )
+//
+//                 ZMK_MACRO(word_poetry,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings = <&kp P &kp O &kp E &kp T &kp R &kp Y>;
+//                 )
+//
+//                 ZMK_MACRO(word_class,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings = <&kp C &kp L &kp A &kp S &kp S>;
+//                 )
+//
+//                 ZMK_MACRO(word_def,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings = <&kp D &kp E &kp F>;
+//                 )
+//
+//                 ZMK_MACRO(word_true,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings
+//                                 = <&macro_press &kp LSHIFT>
+//                                 , <&macro_tap &kp T>
+//                                 , <&macro_release &kp LSHIFT>
+//                                 , <&macro_tap &kp R &kp U &kp E>;
+//                 )
+//
+//                 ZMK_MACRO(word_false,
+//                         wait-ms = <30>;
+//                         tap-ms = <30>;
+//                         bindings
+//                                 = <&macro_press &kp LSHIFT>
+//                                 , <&macro_tap &kp F>
+//                                 , <&macro_release &kp LSHIFT>
+//                                 , <&macro_tap &kp A &kp L &kp S &kp E>;
+//                 )
+//         };
 
         combos {
                 compatible = "zmk,combos";
@@ -266,10 +279,10 @@
                 default_layer {
                         label = "DEFAULT";
                         bindings = <
-   &kp TAB        &kp Q       &kp W       &kp F        &kp P         &kp B                           &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
-   &sl L_FUNCTION &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T  &kp G                           &kp M               &hmr RCTRL N &hmr RSHFT E &hmr RALT I &hmr RGUI O &kp SEMI
-   &kp LSHFT      &kp Z       &kp X       &kp C        &kp D         &kp V                           &kp K               &kp H        &kp COMMA    &kp DOT     &kp FSLH    &tog L_CONTROL
-                                                       &kp BSPC      &sk LSHFT &key_repeat &kp ENTER &lt L_EXTEND SPACE  &num_word_layer L_SYMBOL 0
+   &kp TAB        &kp Q       &kp W       &kp F        &kp P         &kp B                             &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
+   &sl L_FUNCTION &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T  &kp G                             &kp M               &hmr RCTRL N &hmr RSHFT E &hmr RALT I &hmr RGUI O &kp SEMI
+   &kp LSHFT      &kp Z       &kp X       &kp C        &kp D         &kp V                             &kp K               &kp H        &kp COMMA    &kp DOT     &kp FSLH    &tog L_CONTROL
+                                                       &kp BSPC      &sk LSHFT &key_repeat &sl L_MACRO &lt L_EXTEND SPACE  &num_word_layer L_SYMBOL 0
                         >;
                 };
 
@@ -312,6 +325,16 @@
 //                                          &trans    &trans   &trans   &trans   &trans   &trans
 //                         >;
 //                 };
+
+                macro_layer {
+                        label = "MACRO";
+                        bindings = <
+    &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans               &trans            &trans   &trans   &trans
+    &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &symbol_double_equal &symbol_not_equal &trans   &trans   &trans
+    &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans      &trans            &trans   &trans
+                                        &trans   &trans   &trans   &trans   &trans   &trans
+                        >;
+                };
 
                 control_layer {
                         label = "CONTROL";
