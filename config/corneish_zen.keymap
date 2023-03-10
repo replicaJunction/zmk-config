@@ -191,7 +191,7 @@
 //                                 , <&macro_release &kp LSHIFT>
 //                                 , <&macro_tap &kp A &kp L &kp S &kp E>;
 //                 )
-//         };
+         };
 
         combos {
                 compatible = "zmk,combos";
