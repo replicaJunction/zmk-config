@@ -211,6 +211,20 @@
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
+                combo_enter {
+                        bindings = <&kp ENTER>;
+                        key-positions = <RM1 RM2 RM3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                combo_equals {
+                        bindings = <&kp EQUALS>;
+                        key-positions = <RM1 RM2>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
                 combo_undo {
                         bindings = <&kp LC(Z)>;
                         key-positions = <LB4 LB3>;
