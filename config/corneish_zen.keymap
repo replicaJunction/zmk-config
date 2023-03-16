@@ -319,9 +319,9 @@
                 extend_layer {
                         label = "EXTEND";
                         bindings = <
-    &trans    &kp ESC   &kp K_BACK &kp LC(F) &kp K_FORWARD &kp INS                       &kp PG_UP &kp HOME      &kp UP    &kp END   &trans    &trans
-    &kp LGUI  &sk LGUI  &sk LALT   &sk LSHFT &sk LCTRL     &trans                        &kp PG_DN &kp LEFT      &kp DOWN  &kp RIGHT &kp DEL   &trans
-    &trans    &kp LC(Z) &kp LC(X)  &kp LC(C) &trans        &kp LC(V)                     &trans    &kp LG(LS(S)) &kp TAB   &kp K_APP &trans    &trans
+    &trans    &kp ESC   &kp K_BACK &kp LC(F) &kp K_FORWARD &kp INS                       &kp PG_UP     &kp HOME &kp UP    &kp END   &trans    &trans
+    &kp LGUI  &sk LGUI  &sk LALT   &sk LSHFT &sk LCTRL     &trans                        &kp PG_DN     &kp LEFT &kp DOWN  &kp RIGHT &kp DEL   &trans
+    &trans    &kp LC(Z) &kp LC(X)  &kp LC(C) &trans        &kp LC(V)                     &kp LG(LS(S)) &trans   &kp TAB   &kp K_APP &trans    &trans
                                              &trans        &trans    &trans    &trans    &trans &trans
                         >;
                 };
