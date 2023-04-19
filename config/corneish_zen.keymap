@@ -186,6 +186,47 @@
         combos {
                 compatible = "zmk,combos";
 
+                // Left hand, top row
+                combo_qw_qu {
+                        bindings = <&digraph_qu>;
+                        key-positions = <LT4 LT3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                combo_hash {
+                        bindings = <&kp HASH>;
+                        key-positions = <LT3 LT2>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                combo_exclamation {
+                        bindings = <&kp EXCL>;
+                        key-positions = <LT2 LT1>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                combo_grave {
+                        bindings = <&kp GRAVE>;
+                        key-positions = <LT1 LT0>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                // Right hand, top row
+                combo_uy_ue {
+                        // This is a same-finger bigram that's uncomfortable
+                        // to type on Colemak-DH, but as a programmer, I use
+                        // the word "true" constantly.
+                        bindings = <&digraph_ue>;
+                        key-positions = <RT2 RT3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                // Left hand, home row
                 combo_esc {
                         // Left hand, home row middle + index -> escape
                         bindings = <&kp ESC>;
@@ -201,6 +242,13 @@
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
+                combo_double_quote {
+                        bindings = <&kp DOUBLE_QUOTE>;
+                        key-positions = <LM1 LM3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
                 combo_enter {
                         bindings = <&kp ENTER>;
                         key-positions = <RM1 RM2 RM3>;
@@ -208,6 +256,7 @@
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
+                // Right hand, home row
                 combo_equals {
                         bindings = <&kp EQUAL>;
                         key-positions = <RM1 RM2>;
@@ -215,6 +264,21 @@
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
+                combo_dash {
+                        bindings = <&kp MINUS>;
+                        key-positions = <RM2 RM3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                combo_single_quote {
+                        bindings = <&kp SINGLE_QUOTE>;
+                        key-positions = <LT1 LT3>;
+                        layers = <L_DEFAULT>HASH;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
+                // Left hand, bottom row
                 combo_undo {
                         bindings = <&kp LC(Z)>;
                         key-positions = <LB4 LB3>;
@@ -257,23 +321,26 @@
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
-                // These combos are di/trigrams for English that are
-                // more difficult to type with Colemak-DH.
-                // The logic behind naming is
-                // "combo_lettersPressed_lettersSent"
-
-                combo_qw_qu {
-                        bindings = <&digraph_qu>;
-                        key-positions = <LT4 LT3>;
+                // Right hand, bottom row
+                combo_caret {
+                        bindings = <&kp CARET>;
+                        key-positions = <RB1 RB2>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
-                combo_uy_ue {
-                        bindings = <&digraph_ue>;
-                        key-positions = <RT2 RT3>;
+                combo_underscore {
+                        bindings = <&kp UNDERSCORE>;
+                        key-positions = <RB2 RB3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
+                };
+
+                combo_dollar_sign {
+                        bindings = <&kp DOLLAR>;
+                        key-positions = <RB1 RB3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 // Programming macros use the left index finger and two
