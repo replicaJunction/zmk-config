@@ -23,8 +23,8 @@
 #define MACRO_WAIT_MS 30
 #define MACRO_TAP_MS 30
 
-// Normal timeout for macros
-#define MACRO_TIMEOUT_MS 50
+// Normal timeout for combos
+#define COMBO_TIMEOUT_MS 50
 
 
 &num_word {  // num-word, requires PR #1441
@@ -191,35 +191,35 @@
                         bindings = <&digraph_qu>;
                         key-positions = <LT4 LT3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_hash {
                         bindings = <&kp HASH>;
                         key-positions = <LT3 LT2>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_exclamation {
                         bindings = <&kp EXCL>;
                         key-positions = <LT2 LT1>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_at {
                         bindings = <&kp AT>;
                         key-positions = <LT3 LT1>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_grave {
                         bindings = <&kp GRAVE>;
                         key-positions = <LT1 LT0>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 // Right hand, top row
@@ -230,7 +230,7 @@
                         bindings = <&digraph_ue>;
                         key-positions = <RT2 RT3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 // Left hand, home row
@@ -238,7 +238,7 @@
                         bindings = <&sl L_SYMBOL>;
                         key-positions = <LM0 LM1>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_esc {
@@ -246,28 +246,28 @@
                         bindings = <&kp ESC>;
                         key-positions = <LM1 LM2>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_tab {
                         bindings = <&kp TAB>;
                         key-positions = <LM2 LM3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_double_quote {
                         bindings = <&kp DOUBLE_QUOTES>;
                         key-positions = <LM1 LM3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_enter {
                         bindings = <&kp ENTER>;
                         key-positions = <RM1 RM2 RM3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 // Right hand, home row
@@ -275,28 +275,28 @@
                         bindings = <&sl L_SYMBOL>;
                         key-positions = <RM0 RM1>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_equals {
                         bindings = <&kp EQUAL>;
                         key-positions = <RM1 RM2>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_dash {
                         bindings = <&kp MINUS>;
                         key-positions = <RM2 RM3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_single_quote {
                         bindings = <&kp SINGLE_QUOTE>;
                         key-positions = <LT1 LT3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 // Left hand, bottom row
@@ -304,42 +304,42 @@
                         bindings = <&kp LC(Z)>;
                         key-positions = <LB4 LB3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_cut {
                         bindings = <&kp LC(X)>;
                         key-positions = <LB4 LB2>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_copy {
                         bindings = <&kp LC(C)>;
                         key-positions = <LB3 LB2>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_paste {
                         bindings = <&kp LC(V)>;
                         key-positions = <LB2 LB1>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_select_all {
                         bindings = <&kp LC(A)>;
                         key-positions = <LB4 LB1>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_find {
                         bindings = <&kp LC(F)>;
                         key-positions = <LB1 LB0>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 // Right hand, bottom row
@@ -371,14 +371,14 @@
                         bindings = <&symbol_double_equal>;
                         key-positions = <LB1 RT1 RT2>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_not_equals {
                         bindings = <&symbol_not_equal>;
                         key-positions = <LB1 RT2 RT3>;
                         layers = <L_DEFAULT>;
-                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
         };
 
