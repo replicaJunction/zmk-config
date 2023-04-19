@@ -223,6 +223,20 @@
                 };
 
                 // Right hand, top row
+                combo_tilde {
+                        bindings = <&kp TILDE>;
+                        key-positions = <RT0 RT1>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
+                };
+
+                combo_plus {
+                        bindings = <&kp PLUS>;
+                        key-positions = <RT1 RT2>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
+                };
+
                 combo_uy_ue {
                         // This is a same-finger bigram that's uncomfortable
                         // to type on Colemak-DH, but as a programmer, I use
