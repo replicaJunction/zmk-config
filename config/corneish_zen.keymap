@@ -234,6 +234,13 @@
                 };
 
                 // Left hand, home row
+                combo_lh_symbol_layer {
+                        bindings = <&sl L_SYMBOL>;
+                        key-positions = <LM0 LM1>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
                 combo_esc {
                         // Left hand, home row middle + index -> escape
                         bindings = <&kp ESC>;
@@ -264,6 +271,13 @@
                 };
 
                 // Right hand, home row
+                combo_rh_symbol_layer {
+                        bindings = <&sl L_SYMBOL>;
+                        key-positions = <RM0 RM1>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
                 combo_equals {
                         bindings = <&kp EQUAL>;
                         key-positions = <RM1 RM2>;
