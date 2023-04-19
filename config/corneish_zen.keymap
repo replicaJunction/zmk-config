@@ -295,7 +295,7 @@
                 combo_single_quote {
                         bindings = <&kp SINGLE_QUOTE>;
                         key-positions = <LT1 LT3>;
-                        layers = <L_DEFAULT>HASH;
+                        layers = <L_DEFAULT>;
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
