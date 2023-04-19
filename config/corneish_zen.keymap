@@ -308,7 +308,7 @@
 
                 combo_single_quote {
                         bindings = <&kp SINGLE_QUOTE>;
-                        key-positions = <LT1 LT3>;
+                        key-positions = <RM1 RM3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
