@@ -250,7 +250,7 @@
                 };
 
                 combo_double_quote {
-                        bindings = <&kp DOUBLE_QUOTE>;
+                        bindings = <&kp DOUBLE_QUOTES>;
                         key-positions = <LM1 LM3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <MACRO_TIMEOUT_MS>;
