@@ -208,6 +208,13 @@
                         timeout-ms = <MACRO_TIMEOUT_MS>;
                 };
 
+                combo_at {
+                        bindings = <&kp AT>;
+                        key-positions = <LT3 LT1>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <MACRO_TIMEOUT_MS>;
+                };
+
                 combo_grave {
                         bindings = <&kp GRAVE>;
                         key-positions = <LT1 LT0>;
