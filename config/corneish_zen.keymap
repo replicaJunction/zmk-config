@@ -412,9 +412,9 @@
                 extend_layer {
                         label = "EXTEND";
                         bindings = <
-    &trans    &kp ESC   &kp C_AC_BACK &kp LC(F) &kp C_AC_FORWARD &kp INS                       &kp PG_UP     &kp HOME &kp UP    &kp END   &trans    &trans
-    &kp LGUI  &sk LGUI  &sk LALT      &sk LSHFT &sk LCTRL        &trans                        &kp PG_DN     &kp LEFT &kp DOWN  &kp RIGHT &kp DEL   &trans
-    &trans    &kp LC(Z) &kp LC(X)     &kp LC(C) &trans           &kp LC(V)                     &kp LG(LS(S)) &trans   &kp TAB   &kp K_APP &trans    &trans
+    &trans  &kp ESC   &kp C_AC_BACK &kp LC(F) &kp C_AC_FORWARD &kp INS                       &kp PG_UP     &kp HOME &kp UP    &kp END   &trans    &trans
+    &trans  &kp LGUI  &kp LALT      &kp LSHFT &kp LCTRL        &trans                        &kp PG_DN     &kp LEFT &kp DOWN  &kp RIGHT &kp DEL   &trans
+    &trans  &kp LC(Z) &kp LC(X)     &kp LC(C) &trans           &kp LC(V)                     &kp LG(LS(S)) &trans   &kp TAB   &kp K_APP &trans    &trans
                                                 &trans           &trans    &trans    &trans    &trans &trans
                         >;
                 };
@@ -433,7 +433,7 @@
                         label = "FUNC";
                         bindings = <
     &trans   &trans   &trans   &trans    &trans    &sl L_CONTROL               &kp F12   &kp F7   &kp F8   &kp F9   &kp LC(PLUS)  &trans
-    &trans   &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &trans                      &kp F11   &kp F4   &kp F5   &kp F6   &kp LC(MINUS) &trans
+    &trans   &kp LGUI &kp LALT &kp LSHFT &kp LCTRL &trans                      &kp F11   &kp F4   &kp F5   &kp F6   &kp LC(MINUS) &trans
     &trans   &trans   &trans   &trans    &trans    &trans                      &kp F10   &kp F1   &kp F2   &kp F3   &kp LC(0)     &trans
                                          &trans    &trans   &trans   &kp ENTER &kp ESC   &trans
                         >;
