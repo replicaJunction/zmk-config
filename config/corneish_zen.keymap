@@ -114,6 +114,12 @@
                         bindings = <&kp U &kp E>;
                 )
 
+                ZMK_MACRO(digraph_ch,
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
+                        bindings = <&kp C &kp H>;
+                )
+
                 ZMK_MACRO(digraph_sh,
                         wait-ms = <MACRO_WAIT_MS>;
                         tap-ms = <MACRO_TAP_MS>;
@@ -284,16 +290,10 @@
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
-                combo_tab {
-                        bindings = <&kp TAB>;
+                combo_digraph_ch {
+                        // R+T -> CH
+                        bindings = <&digraph_ch>;
                         key-positions = <LM1 LM3>;
-                        layers = <L_DEFAULT>;
-                        timeout-ms = <COMBO_TIMEOUT_MS>;
-                };
-
-                combo_enter {
-                        bindings = <&kp ENTER>;
-                        key-positions = <RM1 RM2 RM3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
@@ -324,6 +324,13 @@
                 combo_single_quote {
                         bindings = <&kp SINGLE_QUOTE>;
                         key-positions = <RM1 RM3>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
+                };
+
+                combo_enter {
+                        bindings = <&kp ENTER>;
+                        key-positions = <RM1 RM2 RM3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
