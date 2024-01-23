@@ -114,6 +114,18 @@
                         bindings = <&kp U &kp E>;
                 )
 
+                ZMK_MACRO(digraph_sh,
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
+                        bindings = <&kp S &kp H>;
+                )
+
+                ZMK_MACRO(digraph_th,
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
+                        bindings = <&kp T &kp H>;
+                )
+
                 ZMK_MACRO(symbol_double_equal,
                         wait-ms = <MACRO_WAIT_MS>;
                         tap-ms = <MACRO_TAP_MS>;
@@ -201,8 +213,8 @@
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
-                combo_exclamation {
-                        bindings = <&kp EXCL>;
+                combo_esc {
+                        bindings = <&kp ESC>;
                         key-positions = <LT2 LT1>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
@@ -230,8 +242,8 @@
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
-                combo_plus {
-                        bindings = <&kp PLUS>;
+                combo_colon {
+                        bindings = <&kp COLON>;
                         key-positions = <RT1 RT2>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
@@ -249,29 +261,31 @@
 
                 // Left hand, home row
                 combo_lh_symbol_layer {
+                        // T+G -> symbols
                         bindings = <&sl L_SYMBOL>;
                         key-positions = <LM0 LM1>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
-                combo_esc {
-                        // Left hand, home row middle + index -> escape
-                        bindings = <&kp ESC>;
+                combo_digraph_th {
+                        // S+T -> TH
+                        bindings = <&digraph_th>;
                         key-positions = <LM1 LM2>;
+                        layers = <L_DEFAULT>;
+                        timeout-ms = <COMBO_TIMEOUT_MS>;
+                };
+
+                combo_digraph_sh {
+                        // R+S -> SH
+                        bindings = <&digraph_sh>;
+                        key-positions = <LM2 LM3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
 
                 combo_tab {
                         bindings = <&kp TAB>;
-                        key-positions = <LM2 LM3>;
-                        layers = <L_DEFAULT>;
-                        timeout-ms = <COMBO_TIMEOUT_MS>;
-                };
-
-                combo_double_quote {
-                        bindings = <&kp DOUBLE_QUOTES>;
                         key-positions = <LM1 LM3>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
@@ -285,8 +299,9 @@
                 };
 
                 // Right hand, home row
-                combo_rh_symbol_layer {
-                        bindings = <&sl L_SYMBOL>;
+                combo_plus {
+                        // M+N -> +
+                        bindings = <&kp PLUS>;
                         key-positions = <RM0 RM1>;
                         layers = <L_DEFAULT>;
                         timeout-ms = <COMBO_TIMEOUT_MS>;
