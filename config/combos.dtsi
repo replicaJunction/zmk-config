@@ -28,7 +28,7 @@ combos {
     COMBO_ALPHA(colon,        &kp COLON,         RM0 RM1)     // M+N
     COMBO_ALPHA(equals,       &kp EQUAL,         RM1 RM2)     // N+E
     COMBO_ALPHA(dash,         &kp MINUS,         RM2 RM3)     // E+I
-    COMBO_ALPHA(enter,        &kp ENTER,         RM0 RM1 RM2) // N+E+I
+    COMBO_ALPHA(enter,        &kp ENTER,         RM1 RM2 RM3) // N+E+I
 
     // Left hand bottom row: text editing
     COMBO_ALPHA(undo,         &kp LC(Z),         LB4 LB3)     // Z+X
