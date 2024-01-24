@@ -102,6 +102,12 @@
         };
 
         macros {
+                ZMK_MACRO(digraph_kn,
+                        wait-ms = <MACRO_WAIT_MS>;
+                        tap-ms = <MACRO_TAP_MS>;
+                        bindings = <&kp K &kp N>;
+                )
+
                 ZMK_MACRO(digraph_qu,
                         wait-ms = <MACRO_WAIT_MS>;
                         tap-ms = <MACRO_TAP_MS>;
@@ -417,6 +423,8 @@
                         timeout-ms = <COMBO_TIMEOUT_MS>;
                 };
         };
+
+#include "combos.dtsi"
 
         keymap {
                 compatible = "zmk,keymap";
