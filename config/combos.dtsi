@@ -1,3 +1,4 @@
+
 #define COMBO_ALPHA(NAME, BINDINGS, KEYPOSITIONS) \
     combo_##NAME { \
         bindings = <BINDINGS>; \
@@ -10,38 +11,38 @@ combos {
     compatible = "zmk,combos";
 
     // Left hand, top alpha row
-    COMBO_ALPHA(hash,         &kp HASH,          24 25)    // W+F
-    COMBO_ALPHA(double_quote, &kp DOUBLE_QUOTES, 25 26)    // F+P
-    COMBO_ALPHA(at,           &kp AT,            24 26)    // W+P
-    COMBO_ALPHA(grave,        &kp GRAVE,         26 27)    // P+B
+    COMBO_ALPHA(hash,         &kp HASH,          LT3 LT2)     // W+F
+    COMBO_ALPHA(double_quote, &kp DOUBLE_QUOTES, LT2 LT1)     // F+P
+    COMBO_ALPHA(at,           &kp AT,            LT3 LT1)     // W+P
+    COMBO_ALPHA(grave,        &kp GRAVE,         LT1 LT0)     // P+B
 
     // Right hand, top alpha row
-    COMBO_ALPHA(tilde,        &kp TILDE,         28 29)    // J+L
-    COMBO_ALPHA(plus,         &kp PLUS,          29 30)    // L+U
-    COMBO_ALPHA(digraph_ue,   &digraph_ue,       30 31)    // U+Y
+    COMBO_ALPHA(tilde,        &kp TILDE,         RT0 RT1)     // J+L
+    COMBO_ALPHA(plus,         &kp PLUS,          RT1 RT2)     // L+U
+    COMBO_ALPHA(digraph_ue,   &digraph_ue,       RT2 RT3)     // U+Y
 
     // Left hand, home row
-    COMBO_ALPHA(esc,          &kp ESC,           37 38)    // S+T
+    COMBO_ALPHA(esc,          &kp ESC,           LM1 LM2)     // S+T
 
     // Right hand, home row
-    COMBO_ALPHA(colon,        &kp COLON,         40 41)    // M+N
-    COMBO_ALPHA(equals,       &kp EQUAL,         41 42)    // N+E
-    COMBO_ALPHA(dash,         &kp MINUS,         42 43)    // E+I
-    COMBO_ALPHA(enter,        &kp ENTER,         41 42 43) // N+E+I
+    COMBO_ALPHA(colon,        &kp COLON,         RM0 RM1)     // M+N
+    COMBO_ALPHA(equals,       &kp EQUAL,         RM1 RM2)     // N+E
+    COMBO_ALPHA(dash,         &kp MINUS,         RM2 RM3)     // E+I
+    COMBO_ALPHA(enter,        &kp ENTER,         RM0 RM1 RM2) // N+E+I
 
     // Left hand bottom row: text editing
-    COMBO_ALPHA(undo,         &kp LC(Z),         47 48)    // Z+X
-    COMBO_ALPHA(copy,         &kp LC(C),         48 49)    // X+C
-    COMBO_ALPHA(cut,          &kp LC(X),         47 49)    // Z+C
-    COMBO_ALPHA(paste,        &kp LC(V),         49 50)    // Z+C
-    COMBO_ALPHA(select_all,   &kp LC(A),         47 50)    // Z+D
-    COMBO_ALPHA(find,         &kp LC(F),         50 51)    // D+V
+    COMBO_ALPHA(undo,         &kp LC(Z),         LB4 LB3)     // Z+X
+    COMBO_ALPHA(copy,         &kp LC(C),         LB3 LB2)     // X+C
+    COMBO_ALPHA(cut,          &kp LC(X),         LB4 LB2)     // Z+C
+    COMBO_ALPHA(paste,        &kp LC(V),         LB2 LB1)     // Z+C
+    COMBO_ALPHA(select_all,   &kp LC(A),         LB4 LB1)     // Z+D
+    COMBO_ALPHA(find,         &kp LC(F),         LB1 LB0)     // D+V
 
     // Right hand, bottom row
-    COMBO_ALPHA(digraph_kn,   &digraph_kn,       58 59)    // K+H
-    COMBO_ALPHA(caret,        &kp CARET,         59 60)    // H+,
-    COMBO_ALPHA(underscore,   &kp UNDERSCORE,    60 61)    // ,+.
-    COMBO_ALPHA(dollar,       &kp DOLLAR,        59 61)    // H+.
-    COMBO_ALPHA(backslash,    &kp BACKSLASH,     61 62)    // .+/
-    COMBO_ALPHA(pipe,         &kp PIPE,          59 62)    // .+/
+    COMBO_ALPHA(digraph_kn,   &digraph_kn,       RB0 RB1)     // K+H
+    COMBO_ALPHA(caret,        &kp CARET,         RB1 RB2)     // H+,
+    COMBO_ALPHA(underscore,   &kp UNDERSCORE,    RB2 RB3)     // ,+.
+    COMBO_ALPHA(dollar,       &kp DOLLAR,        RB1 RB3)     // H+.
+    COMBO_ALPHA(backslash,    &kp BACKSLASH,     RB3 RB4)     // .+/
+    COMBO_ALPHA(pipe,         &kp PIPE,          RB4 RB5)     // .+/
 };
