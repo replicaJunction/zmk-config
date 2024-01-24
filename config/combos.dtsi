@@ -44,5 +44,5 @@ combos {
     COMBO_ALPHA(underscore,   &kp UNDERSCORE,    RB2 RB3)     // ,+.
     COMBO_ALPHA(dollar,       &kp DOLLAR,        RB1 RB3)     // H+.
     COMBO_ALPHA(backslash,    &kp BACKSLASH,     RB3 RB4)     // .+/
-    COMBO_ALPHA(pipe,         &kp PIPE,          RB4 RB5)     // .+/
+    COMBO_ALPHA(pipe,         &kp PIPE,          RB1 RB4)     // .+/
 };
