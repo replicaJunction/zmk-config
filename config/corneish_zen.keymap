@@ -20,12 +20,6 @@
 #define L_CONTROL   4
 
 #define QUICK_TAP_MS 175
-#define MACRO_WAIT_MS 30
-#define MACRO_TAP_MS 30
-
-// Normal timeout for combos
-#define COMBO_TIMEOUT_MS 50
-
 
 &num_word {  // num-word, requires PR #1441
     layers = <L_SYMBOL>;
@@ -48,35 +42,118 @@
   };
 };
 
+   // The best home row mod (HRM) experience I've found comes with combining
+    // a long "tapping term" with the new "require prior idle" setting in
+    // ZMK's PR #1387. Using this feature, rapid typing does not generate
+    // accidental modifiers, but when you've been idle for a certain amount
+    // of time, you can easily trigger home row modifiers without waiting
+    // forever and a day.
+    //
+    // For another layer of safety, I also use the "hold trigger key positions"
+    // feature. This prevents the quick-tap behavior from firing with other
+    // keys on the same side of the keyboard. In essense, to type Ctrl+A, I
+    // must use the Ctrl key on the right half of the keyboard, since A is on
+    // the left half of the keyboard.
+    //
+    // Combining these two settings is honestly magical. Home row mods have
+    // never felt better.
+    //
+    // References:
+    // * https://zmk.dev/docs/behaviors/hold-tap#require-prior-idle-ms
+    // * https://zmk.dev/docs/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
+    // * https://github.com/urob/zmk-config?tab=readme-ov-file#timeless-homerow-mods
+
+    // Tap/hold behavior style
+    // "holdiepreferred", "balanced", "tapiepreferred", "tap-unless-interrupted"
+    #define HRM_BEHAVIOR "balanced"
+
+    // This is intentonally very large because of the interaction with
+    // require-prior-idle-ms. Basically, holding a key longer than this
+    // delay allows combos that don't respect the hold-trigger-key-positions
+    // setting, so it needs to be pretty large to prevent unintentional
+    // holds.
+    #define HRM_TAPPING_TERM_MS 280
+
+    // If pressing any other key before a HRM key within this window,
+    // the tap/hold configuration will be completely ignored and the
+    // key will always be treated as a tap. This prevents a
+    // long tapping-term-ms from feeling sluggish.
+    // Introduced in ZMK PR #1387
+    #define HRM_REQUIRE_PRIOR_IDLE_MS 150
+
+    // Double-tap the key within this window to hold that keystroke
+    // (instead of holding the modifier, press and hold the key, like
+    // jjjjjjjjjjjjjjjjjjjjjjjjjjjjj)
+    #define HRM_QUICK_TAP_MS 175
+
+    // Combo configuration
+    // -------------------
+
+    // General combo timer - press both keys in this window to activate
+    // a combo
+    #define COMBO_TIMEOUT_MS 50
+
+    // Combo values for the home row should be a bit tigher to prevent
+    // misfires
+    #define COMBO_TIMEOUT_MS_SHORT 35
+
+    #define MACRO_WAIT_MS 30
+    #define MACRO_TAP_MS 30
+
 / {
 
         behaviors {
                 hml: homerow_mods_left {
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_MODS_LEFT";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <280>;
-                        quick-tap-ms = <QUICK_TAP_MS>;
+                        flavor = HRM_BEHAVIOR;
+                        tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+                        quick-tap-ms = <HRM_QUICK_TAP_MS>;
                         global-quick-tap-ms = <150>;   // requires PR #1387
-                        flavor = "balanced";
-                        bindings = <&kp>, <&kp>;
                         hold-trigger-key-positions = <KEYS_RIGHT_SIDE KEYS_THUMBS>;
                         hold-trigger-on-release;       // requires PR #1423
+                        #binding-cells = <2>;
+                        bindings = <&kp>, <&kp>;
                 };
 
                 hmr: homerow_mods_right {
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_MODS_RIGHT";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <280>;
-                        quick-tap-ms = <QUICK_TAP_MS>;
+                        flavor = HRM_BEHAVIOR;
+                        tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+                        quick-tap-ms = <HRM_QUICK_TAP_MS>;
                         global-quick-tap-ms = <150>;   // requires PR #1387
-                        flavor = "balanced";
-                        bindings = <&kp>, <&kp>;
                         hold-trigger-key-positions = <KEYS_LEFT_SIDE KEYS_THUMBS>;
                         hold-trigger-on-release;       // requires PR #1423
+                        #binding-cells = <2>;
+                        bindings = <&kp>, <&kp>;
                 };
 
+                hll: homerow_layer_left {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_LAYER_LEFT";
+                        flavor = HRM_BEHAVIOR;
+                        tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+                        quick-tap-ms = <HRM_QUICK_TAP_MS>;
+                        global-quick-tap-ms = <150>;   // requires PR #1387
+                        hold-trigger-key-positions = <KEYS_RIGHT_SIDE KEYS_THUMBS>;
+                        hold-trigger-on-release;       // requires PR #1423
+                        #binding-cells = <2>;
+                        bindings = <&mo>, <&kp>;
+                };
+
+                hlr: homerow_layer_right {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_LAYER_RIGHT";
+                        flavor = HRM_BEHAVIOR;
+                        tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+                        quick-tap-ms = <HRM_QUICK_TAP_MS>;
+                        global-quick-tap-ms = <150>;   // requires PR #1387
+                        hold-trigger-key-positions = <KEYS_LEFT_SIDE KEYS_THUMBS>;
+                        hold-trigger-on-release;       // requires PR #1423
+                        #binding-cells = <2>;
+                        bindings = <&mo>, <&kp>;
+                };
 
                 num_word_layer: behavior_num_word_layer {
                         // This creates a tap/hold behavior where tapping
@@ -215,10 +292,10 @@
                 default_layer {
                         label = "DEFAULT";
                         bindings = <
-   &num_word_layer L_SYMBOL 0 &kp Q       &kp W       &kp F        &kp P         &kp B                           &kp J               &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
-   &sl L_FUNCTION             &hml LGUI A &hml LALT R &hml LSHFT S &hml LCTRL T  &kp G                           &kp M               &hmr RCTRL N &hmr RSHFT E &hmr RALT I &hmr RGUI O &kp SEMI
-   &sl L_CONTROL              &kp Z       &kp X       &kp C        &kp D         &kp V                           &kp K               &kp H        &kp COMMA    &kp DOT     &kp FSLH    &sl L_CONTROL
-                                                                   &kp BSPC      &sk LSHFT &key_repeat &kp ENTER &lt L_EXTEND SPACE  &sl L_SYMBOL
+   &num_word_layer L_SYMBOL 0 &kp Q       &kp W       &hll L_SYMBOL F &kp P         &kp B                           &kp J               &kp L        &hll L_SYMBOLS U &kp Y       &kp SQT     &kp BSPC
+   &sl L_FUNCTION             &hml LGUI A &hml LALT R &hml LSHFT S    &hml LCTRL T  &kp G                           &kp M               &hmr RCTRL N &hmr RSHFT E     &hmr RALT I &hmr RGUI O &kp SEMI
+   &sl L_CONTROL              &kp Z       &kp X       &kp C           &kp D         &kp V                           &kp K               &kp H        &kp COMMA        &kp DOT     &kp FSLH    &sl L_CONTROL
+                                                                      &kp BSPC      &sk LSHFT &key_repeat &kp ENTER &lt L_EXTEND SPACE  &sl L_SYMBOL
                         >;
                 };
 
