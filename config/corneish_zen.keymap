@@ -179,6 +179,44 @@
         };
 
         macros {
+                // Bluetooth selection macros are lovingly adapted from the
+                // MoErgo Glove80 ZMK repo (MIT licensed):
+                // https://github.com/moergo-sc/glove80-zmk-config/blob/main/config/glove80.keymap
+                ZMK_MACRO(bt_0,
+                          bindings
+                              = <&out OUT_BLE>
+                              , <&bt BT_SEL 0>
+                              ;
+                )
+
+                ZMK_MACRO(bt_1,
+                          bindings
+                              = <&out OUT_BLE>
+                              , <&bt BT_SEL 1>
+                              ;
+                )
+
+                ZMK_MACRO(bt_2,
+                          bindings
+                              = <&out OUT_BLE>
+                              , <&bt BT_SEL 2>
+                              ;
+                )
+
+                ZMK_MACRO(bt_3,
+                          bindings
+                              = <&out OUT_BLE>
+                              , <&bt BT_SEL 3>
+                              ;
+                )
+
+                ZMK_MACRO(bt_4,
+                          bindings
+                              = <&out OUT_BLE>
+                              , <&bt BT_SEL 4>
+                              ;
+                )
+
                 ZMK_MACRO(digraph_kn,
                         wait-ms = <MACRO_WAIT_MS>;
                         tap-ms = <MACRO_TAP_MS>;
@@ -342,9 +380,9 @@
                 control_layer {
                         label = "CONTROL";
                         bindings = <
-    &bootloader &trans       &trans       &trans       &trans       &out OUT_USB                   &bt BT_CLR &trans   &trans   &trans   &trans   &bootloader
-    &reset      &trans       &trans       &trans       &trans       &out OUT_BLE                   &trans     &trans   &trans   &trans   &trans   &reset
-    &trans      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &trans     &trans   &trans   &trans   &trans   &trans
+    &bootloader &trans       &trans       &trans       &trans       &trans                         &bt BT_CLR &trans   &trans   &trans   &trans   &bootloader
+    &reset      &bt_3        &bt_4        &out OUT_USB &trans       &trans                         &trans     &trans   &trans   &trans   &trans   &reset
+    &trans      &bt_0        &bt_1        &bt_2        &trans       &trans                         &trans     &trans   &trans   &trans   &trans   &trans
                                                        &trans       &trans       &trans   &trans   &trans     &trans
                         >;
                 };
